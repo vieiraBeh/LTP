@@ -25,13 +25,13 @@ class Animal {
   } 
 
   atributos() {
-  if (this.nome != ""){
+  if (this.nome != "" && this.idade != "" && this.especie != ""){
     return {
       nome: this.nome,
       idade: this.idade,
       especie: this.especie
     };
-   } else{
+   } else {
     throw new Erro("Há atributo vazio.");
    }
   }
@@ -41,6 +41,3 @@ const meuAnimal = new Animal("", 3, "cachorro");
 
 // Imprimindo os atributos
 console.log(meuAnimal.mostrarAtributos());
-console.log(atributos.nome);   
-console.log(atributos.idade);  
-console.log(atributos.especie); 

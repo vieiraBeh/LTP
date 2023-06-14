@@ -2,7 +2,7 @@
 class Erro extends Error {
   constructor(message){
     super(message);
-    this.name = "MyErro";
+    this.name = "Erro";
   }
 }
 
@@ -22,14 +22,14 @@ class NerdIF {
   }
 
   atributos() {
-    if (this.estudante != ""){
+    if (this.nome != "" && this.idade != "" && this.especie != ""){
       return {
         estudante: this.estudante,
         cosplay: this.cosplay,
         nota_cosplay: this.nota_cosplay
       };
      } else {
-      throw new MyErro("Há atributo vazio")
+      throw new Erro("Há atributo vazio")
      }
     }
   }
@@ -38,6 +38,3 @@ class NerdIF {
 const aluno = new NerdIF("", "Homem-Aranha", 9.5);
 
 console.log(aluno.retornarAtributos());
-console.log(atributos.estudante); 
-console.log(atributos.cosplay);   
-console.log(atributos.nota_cosplay);
