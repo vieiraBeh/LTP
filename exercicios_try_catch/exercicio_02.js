@@ -40,11 +40,6 @@ class Estudante {
 const estudante = new Estudante("", 16, "3A");
 
 console.log(estudante.mostrarAtributos());
-
-/*console.log(atributos.nome);   
+console.log(atributos.nome);   
 console.log(atributos.idade);  
-console.log(atributos.turma); */
-
-
-
-//depois de new é classe, antes objeto
+console.log(atributos.turma);
