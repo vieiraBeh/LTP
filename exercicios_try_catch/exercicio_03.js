@@ -22,7 +22,7 @@ class NerdIF {
   }
 
   atributos() {
-    if (this.nome != "" && this.idade != "" && this.especie != ""){
+    if (this.estudante != "" && this.cosplay != "" && this.nota_cosplay != ""){
       return {
         estudante: this.estudante,
         cosplay: this.cosplay,
