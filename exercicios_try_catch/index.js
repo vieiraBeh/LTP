@@ -15,8 +15,8 @@ class Pessoa{
    atributos(){
     if(this.nome != "" && this.sobrenome != ""){
         return this.nome + this.sobrenome
-    }else{
-       throw new Error("Falta nome ou sobrenome")
+    } else{
+       throw new Error("Necessário preencher todos atributos.")
     }
   }
 }

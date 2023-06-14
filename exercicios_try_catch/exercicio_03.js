@@ -1,3 +1,11 @@
+
+class Erro extends Error {
+  constructor(message){
+    super(message);
+    this.name = "MyErro";
+  }
+}
+
 class NerdIF {
   constructor(estudante, cosplay, nota_cosplay) {
     this.estudante = estudante;
@@ -6,22 +14,30 @@ class NerdIF {
   }
 
   retornarAtributos() {
-    return this.atributos()
+    try{
+     return this.atributos();
+    } catch (error) {
+      return error
+    }
   }
 
   atributos() {
-    return {
-      estudante: this.estudante,
-      cosplay: this.cosplay,
-      nota_cosplay: this.nota_cosplay
-    };
+    if (this.estudante != ""){
+      return {
+        estudante: this.estudante,
+        cosplay: this.cosplay,
+        nota_cosplay: this.nota_cosplay
+      };
+     } else {
+      throw new MyErro("Há atributo vazio")
+     }
+    }
   }
-}
 
-const aluno = new NerdIF("João", "Homem-Aranha", 9.5);
-const atributos = aluno.retornarAtributos();
 
+const aluno = new NerdIF("", "Homem-Aranha", 9.5);
+
+console.log(aluno.retornarAtributos());
 console.log(atributos.estudante); 
 console.log(atributos.cosplay);   
 console.log(atributos.nota_cosplay);
-
